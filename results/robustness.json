@@ -1,0 +1,38 @@
+{
+ "R1_tstar_within_one_of_(n+1)/2": "67/68",
+ "R1s_stress": "11/19",
+ "R1_below_majority": [
+  "moderate|a=0.0208|n=4|t*=2",
+  "moderate|a=0.0732|n=5|t*=2",
+  "moderate|a=0.0732|n=6|t*=3",
+  "moderate|a=0.0732|n=7|t*=3",
+  "moderate|a=0.0732|n=8|t*=4",
+  "moderate|a=0.0732|n=10|t*=5",
+  "moderate|a=0.0732|n=12|t*=6",
+  "moderate|a=0.0732|n=14|t*=7",
+  "strict|a=0.0208|n=6|t*=3",
+  "strict|a=0.0732|n=7|t*=3",
+  "strict|a=0.0732|n=8|t*=3",
+  "strict|a=0.0732|n=9|t*=4",
+  "strict|a=0.0732|n=10|t*=5",
+  "strict|a=0.0732|n=11|t*=5",
+  "strict|a=0.0732|n=12|t*=6",
+  "strict|a=0.0732|n=13|t*=6",
+  "strict|a=0.0732|n=14|t*=7"
+ ],
+ "R1_above_majority": [
+  "moderate|a=0.0025|n=15|t*=9",
+  "strict|a=0.0025|n=9|t*=6",
+  "strict|a=0.0025|n=11|t*=7",
+  "strict|a=0.0025|n=13|t*=8",
+  "strict|a=0.0025|n=15|t*=9",
+  "strict|a=0.0208|n=15|t*=9"
+ ],
+ "R2_n_of_n_fails_availability": "336/336",
+ "R3_diversity_wins": "72/72",
+ "R1_counts_equal_below_above": [
+  45,
+  17,
+  6
+ ]
+}
