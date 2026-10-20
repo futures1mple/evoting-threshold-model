@@ -17,6 +17,7 @@ The scripts compute, for `t`-of-`n` tallying authorities, the probability that t
 | `rounds.py` | Probabilistic aggregation (`kappa` attempts, `R` tally attempts), also for 125 separate constituency tallies → `results/rounds.json` |
 | `cost.py` | Ballot and bulletin-board sizes and running times for T-EVOLVE at 6.48 million voters, for a single national tally and for 125 constituency tallies → `results/cost.json` (needs the T-EVOLVE build, see below) |
 | `est_nat.py`, `est_sis.py` | Lattice-estimator runs for the national parameter set → `results/estimator_*.json*` |
+| `est_models.py` | The national parameter set under the MATZOV model (classical and quantum) and core-SVP (classical and quantum) → `results/estimator_d8_q46_models.jsonl` |
 | `figures.py` | All figures → `fig/` |
 | `report_numbers.py` | Prints every number quoted in the paper from the result files → `results/numbers.txt` |
 
@@ -76,11 +77,12 @@ Sizes come from `param_report`. Running times are unit costs measured on one vir
 
 ### Hardness estimates (optional)
 
-`est_nat.py` and `est_sis.py` need SageMath and the lattice estimator (https://github.com/malb/lattice-estimator, commit 53da598):
+`est_nat.py`, `est_sis.py` and `est_models.py` need SageMath and the lattice estimator (https://github.com/malb/lattice-estimator, commit 53da598):
 
 ```
 ESTIMATOR_DIR=/path/to/lattice-estimator sage -python est_nat.py 8 70368744176561 <beta>
 ESTIMATOR_DIR=/path/to/lattice-estimator sage -python est_sis.py 8 70368744176561 45.913
+for m in MATZOV MATZOV_q ADPS16 ADPS16_q; do ESTIMATOR_DIR=/path/to/lattice-estimator sage -python est_models.py $m; done > results/estimator_d8_q46_models.jsonl
 ```
 
 The SIS estimate was run for log2 beta = 45.913 (value of an earlier analysis build); the extended implementation gives 45.914, which does not change the estimate at the reported precision.
